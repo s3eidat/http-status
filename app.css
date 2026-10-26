@@ -1,0 +1,34 @@
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+#q { height: 46px; font-size: 15px; }
+.hs-grid { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 14px; align-items: start; }
+@media (max-width: 760px) { .hs-grid { grid-template-columns: minmax(0, 1fr); } .detail { order: -1; position: static !important; } }
+.list-card { padding: 8px; }
+.codes { list-style: none; margin: 0; padding: 0; max-height: 600px; overflow: auto; }
+.code-row {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px 10px; border-radius: 10px; text-align: left;
+  color: var(--text-2); transition: background var(--dur), color var(--dur);
+}
+.code-row:hover { background: var(--surface-2); color: var(--text); }
+.code-row.on { background: var(--accent-soft); color: var(--text); }
+.code-row .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 550; }
+.badge { flex: none; width: 48px; text-align: center; padding: 3px 0; border-radius: 7px; font: 700 13px/1.3 var(--mono); background: var(--surface-3); }
+.chip.tiny { padding: 1px 7px; font-size: 10.5px; }
+
+.c1 { color: var(--text-2); }
+.c2 { color: var(--ok); }
+.c3 { color: var(--accent); }
+.c4 { color: var(--warn); }
+.c5 { color: var(--danger); }
+.badge.c2, .chip.c2 { background: color-mix(in srgb, var(--ok) 14%, transparent); border-color: transparent; }
+.badge.c3, .chip.c3 { background: var(--accent-soft); border-color: transparent; }
+.badge.c4, .chip.c4 { background: color-mix(in srgb, var(--warn) 14%, transparent); border-color: transparent; }
+.badge.c5, .chip.c5 { background: var(--danger-soft); border-color: transparent; }
+
+.detail { position: sticky; top: 76px; padding: 22px; }
+.detail .big { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin: 18px 0 8px; }
+.detail .num { font: 800 64px/1 var(--font); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.t1 { color: var(--text-2); } .t2 { color: var(--ok); } .t3 { color: var(--accent); } .t4 { color: var(--warn); } .t5 { color: var(--danger); }
+.detail .big h2 { margin: 0; font-size: 24px; letter-spacing: -.02em; }
+.detail .lead { font-size: 16px; color: var(--text); margin: 0 0 6px; }
+.detail h3 { margin: 18px 0 4px; font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); }
+.detail p { margin: 0; color: var(--text-2); line-height: 1.6; }

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>HTTP Status — Every HTTP Status Code Explained Simply | S3eidat Tools</title>
+<meta name="description" content="Searchable list of every standard HTTP status code (1xx–5xx) with a plain explanation, when to use it and common causes. Deep-link any code, e.g. #404. Free and offline.">
+<meta property="og:title" content="HTTP Status — every HTTP status code, explained simply">
+<meta property="og:description" content="Search 404, 418, 503… plain explanations, when to use, common causes.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="http-status">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>HTTP Status</h1>
+    <p>Every standard HTTP status code in plain words: what it means, when to send it and what usually causes it. Type a number or a word.</p>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <label class="grow field"><span class="sr">Search status codes</span>
+        <input class="input" id="q" type="search" placeholder="Search: 404, timeout, redirect, teapot…" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+    <div class="row mt between">
+      <div class="seg" id="cls" role="group" aria-label="Filter by class">
+        <button aria-pressed="true" data-v="">All</button>
+        <button aria-pressed="false" data-v="1">1xx</button>
+        <button aria-pressed="false" data-v="2">2xx</button>
+        <button aria-pressed="false" data-v="3">3xx</button>
+        <button aria-pressed="false" data-v="4">4xx</button>
+        <button aria-pressed="false" data-v="5">5xx</button>
+      </div>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="unofficial"> Show common non-standard codes</label>
+        <span class="chip" id="count"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="hs-grid mt">
+    <section class="card list-card">
+      <ul class="codes" id="list" aria-label="Status codes"></ul>
+      <div class="empty" id="none" hidden><b>No matching status code</b>Try a number like 503 or a word like “cache”.</div>
+    </section>
+    <section class="card detail" id="detail" aria-live="polite"></section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
